@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-->请勿手动更改此文件，可能会导致配置数据的丢失！-->
+<configuration>
+  <PLC>
+    <PLC_IP>192.168.1.1</PLC_IP>
+    <PLC_Port>9600</PLC_Port>
+  </PLC>
+  <Database>
+    <ServerName>DESKTOP-S7EGHL6\CITADEL</ServerName>
+    <DataBaseName>mysql</DataBaseName>
+    <DataBaseUser>sa</DataBaseUser>
+    <DataBasePassword>123</DataBasePassword>
+  </Database>
+  <RefreshTime>2000</RefreshTime>
+</configuration>
