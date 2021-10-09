@@ -41,3 +41,4 @@ C:\Users\WJL\source\repos\PLCAlarmRecord\PLCAlarmRecord\PLCAlarmRecord\obj\Debug
 C:\Users\WJL\source\repos\PLCAlarmRecord\PLCAlarmRecord\PLCAlarmRecord\obj\Debug\PLCAlarmRecord.csproj.CoreCompileInputs.cache
 C:\Users\WJL\source\repos\PLCAlarmRecord\PLCAlarmRecord\PLCAlarmRecord\obj\Debug\PLC状态监控.exe
 C:\Users\WJL\source\repos\PLCAlarmRecord\PLCAlarmRecord\PLCAlarmRecord\obj\Debug\PLC状态监控.pdb
+C:\Users\WJL\source\repos\PLCAlarmRecord\PLCAlarmRecord\PLCAlarmRecord\obj\Debug\PLCAlarmRecord.csprojResolveAssemblyReference.cache

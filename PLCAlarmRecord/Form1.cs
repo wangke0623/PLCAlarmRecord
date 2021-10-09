@@ -137,9 +137,12 @@ namespace PLCAlarmRecord
             public string 数据类型;
             public string 报警内容;
         }
-        public struct StationVariableAddress
+        public struct StationConfig
         {
             public string 工位名;
+            public string PLC类型;
+            public string PLCIP地址;
+            public Int16 PLC读写超时;
             public string PLC心跳地址;
             public string 数据存储触发地址;
             public string 设备状态地址;
@@ -147,57 +150,79 @@ namespace PLCAlarmRecord
             public string 数据存储完成地址;
             public List<ErrorData> 报警数据地址;
         }
-        public StationVariableAddress stationVariableAddress = new StationVariableAddress();
+
         private void 插入工位ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            String importExcelPath = @"..\..\工位配置.xlsx";
-            var workBook = new XLWorkbook(importExcelPath);
-            IXLWorksheet worksheet = workBook.Worksheet(1);
-            stationVariableAddress.工位名 = worksheet.Name;
-            stationVariableAddress.PLC心跳地址 = worksheet.Cell(1, 2).Value.ToString();
-            stationVariableAddress.数据存储触发地址 = worksheet.Cell(3, 2).Value.ToString();
-            stationVariableAddress.设备状态地址 = worksheet.Cell(5, 2).Value.ToString();
-            stationVariableAddress.数据存储完成地址= worksheet.Cell(3, 6).Value.ToString();
-            stationVariableAddress.存表数据地址 = new List<StoreData>();
-            stationVariableAddress.报警数据地址 = new List<ErrorData>();
-            stationVariableAddress.存表数据地址.Clear();
-            stationVariableAddress.报警数据地址.Clear();
-            for (int i=0;i<256;i++)
-            {
-                if (worksheet.Cell(12+i, 1).Value.ToString()=="" || worksheet.Cell(12+i, 2).Value.ToString() == "" || worksheet.Cell(12+i, 3).Value.ToString() == "")
-                {
-                    break;
-                }else
-                {
-                    StoreData storeData = new StoreData();
-                    storeData.数据地址 = worksheet.Cell(12+i, 1).Value.ToString();
-                    storeData.数据类型 = worksheet.Cell(12+i, 2).Value.ToString();
-                    storeData.数据名 = worksheet.Cell(12+i, 3).Value.ToString();
-                    stationVariableAddress.存表数据地址.Add(storeData);
-                }
-            }
+            StationConfig stationConfig = 读取Station配置();
+        }
 
-            for (int i = 0; i < 256; i++)
+        private StationConfig 读取Station配置()
+        {
+            StationConfig stationConfig = new StationConfig();
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            try
             {
-                if (worksheet.Cell(12 + i, 5).Value.ToString() == "" || worksheet.Cell(12 + i, 6).Value.ToString() == "" || worksheet.Cell(12 + i, 7).Value.ToString() == "")
+                fileDialog.Filter = "(*.xlsx) | *.xlsx |(*.xls) | *.xls | 所有文件(*.*) | *.*";
+                fileDialog.ShowDialog();
+                if (fileDialog.FileName != null & fileDialog.FileName != string.Empty)
                 {
-                    break;
-                }
-                else
-                {
-                    ErrorData errorData = new ErrorData();
-                    errorData.报警地址 = worksheet.Cell(12 + i, 5).Value.ToString();
-                    errorData.数据类型 = worksheet.Cell(12 + i, 6).Value.ToString();
-                    errorData.报警内容 = worksheet.Cell(12 + i, 7).Value.ToString();
-                    stationVariableAddress.报警数据地址.Add(errorData);
+                    String importExcelPath = fileDialog.FileName;
+                    var workBook = new XLWorkbook(importExcelPath);
+                    IXLWorksheet worksheet = workBook.Worksheet(1);
+                    stationConfig.工位名 = worksheet.Name;
+                    stationConfig.PLCIP地址 = worksheet.Cell(3, 2).Value.ToString();
+                    stationConfig.PLC读写超时 = Convert.ToInt16(worksheet.Cell(4, 2).Value.ToString());
+                    stationConfig.PLC心跳地址 = worksheet.Cell(8, 2).Value.ToString();
+                    stationConfig.数据存储触发地址 = worksheet.Cell(10, 2).Value.ToString();
+                    stationConfig.设备状态地址 = worksheet.Cell(12, 2).Value.ToString();
+                    stationConfig.数据存储完成地址 = worksheet.Cell(10, 6).Value.ToString();
+                    stationConfig.存表数据地址 = new List<StoreData>();
+                    stationConfig.报警数据地址 = new List<ErrorData>();
+                    stationConfig.存表数据地址.Clear();
+                    stationConfig.报警数据地址.Clear();
+                    for (int i = 0; i < 256; i++)
+                    {
+                        if (worksheet.Cell(19 + i, 1).Value.ToString() == "" || worksheet.Cell(19 + i, 2).Value.ToString() == "" || worksheet.Cell(19 + i, 3).Value.ToString() == "")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            StoreData storeData = new StoreData();
+                            storeData.数据地址 = worksheet.Cell(19 + i, 1).Value.ToString();
+                            storeData.数据类型 = worksheet.Cell(19 + i, 2).Value.ToString();
+                            storeData.数据名 = worksheet.Cell(19 + i, 3).Value.ToString();
+                            stationConfig.存表数据地址.Add(storeData);
+                        }
+                    }
+
+                    for (int i = 0; i < 256; i++)
+                    {
+                        if (worksheet.Cell(19 + i, 5).Value.ToString() == "" || worksheet.Cell(19 + i, 6).Value.ToString() == "" || worksheet.Cell(19 + i, 7).Value.ToString() == "")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            ErrorData errorData = new ErrorData();
+                            errorData.报警地址 = worksheet.Cell(19 + i, 5).Value.ToString();
+                            errorData.数据类型 = worksheet.Cell(19 + i, 6).Value.ToString();
+                            errorData.报警内容 = worksheet.Cell(19 + i, 7).Value.ToString();
+                            stationConfig.报警数据地址.Add(errorData);
+                        }
+                    }
                 }
             }
-            var temp = false;
+            catch (Exception ex)
+            {
+                listBox1.Items.Insert(0, DateTime.Now.ToString("HH:mm:ss") + " " + ex.Source + " " + ex.Message);
+            }
+            return stationConfig;
         }
 
         private void treeView1_Click(object sender, EventArgs e)
         {
-            treeView1.ContextMenuStrip = treeView1.Nodes[0].IsSelected ?  contextMenuStrip1: null;
+            treeView1.ContextMenuStrip = treeView1.Nodes[0].IsSelected ?  contextMenuStrip1: contextMenuStrip2;
         }
 
         private void 删除选中的当前行ToolStripMenuItem_Click(object sender, EventArgs e)

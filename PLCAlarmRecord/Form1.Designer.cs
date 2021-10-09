@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("工位列表");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("工位列表");
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.PLC_Connect = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -39,8 +39,27 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.删除选中的当前行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除所有行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.treeview_imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -59,42 +78,25 @@
             this.使用帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.移除当前工位ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.删除选中的当前行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.删除所有行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.设置当前工位ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.statusStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.contextMenuStrip3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,6 +176,29 @@
             this.dataGridView2.Size = new System.Drawing.Size(1142, 700);
             this.dataGridView2.TabIndex = 0;
             // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.FillWeight = 30F;
+            this.Column5.HeaderText = "时间";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.FillWeight = 30F;
+            this.Column6.HeaderText = "报警变量";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.HeaderText = "报警内容";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
@@ -188,12 +213,116 @@
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "数据记录";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView3);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(2, 486);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1142, 220);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "选项";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11});
+            this.dataGridView3.ContextMenuStrip = this.contextMenuStrip3;
+            this.dataGridView3.Location = new System.Drawing.Point(6, 95);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 23;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(1007, 119);
+            this.dataGridView3.TabIndex = 2;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column8.HeaderText = "查询项";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column9.HeaderText = "条件";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column10.HeaderText = "值";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column11.HeaderText = "逻辑连接";
+            this.Column11.Name = "Column11";
+            // 
+            // contextMenuStrip3
+            // 
+            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.删除选中的当前行ToolStripMenuItem,
+            this.删除所有行ToolStripMenuItem});
+            this.contextMenuStrip3.Name = "contextMenuStrip2";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(173, 48);
+            // 
+            // 删除选中的当前行ToolStripMenuItem
+            // 
+            this.删除选中的当前行ToolStripMenuItem.Name = "删除选中的当前行ToolStripMenuItem";
+            this.删除选中的当前行ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.删除选中的当前行ToolStripMenuItem.Text = "删除选中的当前行";
+            this.删除选中的当前行ToolStripMenuItem.Click += new System.EventHandler(this.删除选中的当前行ToolStripMenuItem_Click);
+            // 
+            // 删除所有行ToolStripMenuItem
+            // 
+            this.删除所有行ToolStripMenuItem.Name = "删除所有行ToolStripMenuItem";
+            this.删除所有行ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.删除所有行ToolStripMenuItem.Text = "删除所有行";
+            this.删除所有行ToolStripMenuItem.Click += new System.EventHandler(this.删除所有行ToolStripMenuItem_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.Location = new System.Drawing.Point(6, 26);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(1125, 63);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "SQL语句";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1027, 171);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(104, 43);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "历史查询";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1027, 107);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 43);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "实时数据";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -211,6 +340,30 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1142, 464);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "时间";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "数据1";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "数据2";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "数据3";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // tabControl1
             // 
@@ -293,7 +446,7 @@
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -311,25 +464,25 @@
             // 插入工位ToolStripMenuItem1
             // 
             this.插入工位ToolStripMenuItem1.Name = "插入工位ToolStripMenuItem1";
-            this.插入工位ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.插入工位ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.插入工位ToolStripMenuItem1.Text = "插入新的工位";
             this.插入工位ToolStripMenuItem1.Click += new System.EventHandler(this.插入工位ToolStripMenuItem1_Click);
             // 
             // 移除当前工位ToolStripMenuItem
             // 
             this.移除当前工位ToolStripMenuItem.Name = "移除当前工位ToolStripMenuItem";
-            this.移除当前工位ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.移除当前工位ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.移除当前工位ToolStripMenuItem.Text = "移除当前工位";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(145, 6);
             // 
             // 系统设置ToolStripMenuItem
             // 
             this.系统设置ToolStripMenuItem.Name = "系统设置ToolStripMenuItem";
-            this.系统设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.系统设置ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.系统设置ToolStripMenuItem.Text = "系统设置";
             // 
             // 帮助ToolStripMenuItem
@@ -359,15 +512,6 @@
             this.关于ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.关于ToolStripMenuItem.Text = "关于";
             // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView1.Location = new System.Drawing.Point(0, 794);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1365, 124);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -375,7 +519,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(0, 765);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1365, 29);
+            this.panel1.Size = new System.Drawing.Size(1365, 23);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -392,10 +536,10 @@
             this.treeView1.Location = new System.Drawing.Point(0, 31);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            treeNode2.Name = "节点0";
-            treeNode2.Text = "工位列表";
+            treeNode1.Name = "节点0";
+            treeNode1.Text = "工位列表";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(211, 735);
             this.treeView1.TabIndex = 5;
@@ -405,11 +549,9 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aToolStripMenuItem,
-            this.bToolStripMenuItem,
-            this.移除当前工位ToolStripMenuItem1});
+            this.aToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 26);
             // 
             // aToolStripMenuItem
             // 
@@ -417,168 +559,35 @@
             this.aToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.aToolStripMenuItem.Text = "插入新的工位";
             // 
-            // bToolStripMenuItem
-            // 
-            this.bToolStripMenuItem.Name = "bToolStripMenuItem";
-            this.bToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.bToolStripMenuItem.Text = "设置当前工位";
-            // 
-            // 移除当前工位ToolStripMenuItem1
-            // 
-            this.移除当前工位ToolStripMenuItem1.Name = "移除当前工位ToolStripMenuItem1";
-            this.移除当前工位ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
-            this.移除当前工位ToolStripMenuItem1.Text = "移除当前工位";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "时间";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "数据1";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "数据2";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "数据3";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.FillWeight = 30F;
-            this.Column5.HeaderText = "时间";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column6.FillWeight = 30F;
-            this.Column6.HeaderText = "报警变量";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column7.HeaderText = "报警内容";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataGridView3);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(2, 486);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1142, 220);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "选项";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1027, 107);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "实时数据";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Location = new System.Drawing.Point(6, 26);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1125, 63);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "SQL语句";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11});
-            this.dataGridView3.ContextMenuStrip = this.contextMenuStrip2;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 95);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(1007, 119);
-            this.dataGridView3.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1027, 171);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 43);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "历史查询";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column8.HeaderText = "查询项";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column9.HeaderText = "条件";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column10.HeaderText = "值";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column11.HeaderText = "逻辑连接";
-            this.Column11.Name = "Column11";
-            // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.删除选中的当前行ToolStripMenuItem,
-            this.删除所有行ToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(173, 48);
+            this.toolStripMenuItem3,
+            this.设置当前工位ToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip1";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(149, 48);
             // 
-            // 删除选中的当前行ToolStripMenuItem
+            // toolStripMenuItem3
             // 
-            this.删除选中的当前行ToolStripMenuItem.Name = "删除选中的当前行ToolStripMenuItem";
-            this.删除选中的当前行ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.删除选中的当前行ToolStripMenuItem.Text = "删除选中的当前行";
-            this.删除选中的当前行ToolStripMenuItem.Click += new System.EventHandler(this.删除选中的当前行ToolStripMenuItem_Click);
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem3.Text = "移除当前工位";
             // 
-            // 删除所有行ToolStripMenuItem
+            // 设置当前工位ToolStripMenuItem
             // 
-            this.删除所有行ToolStripMenuItem.Name = "删除所有行ToolStripMenuItem";
-            this.删除所有行ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.删除所有行ToolStripMenuItem.Text = "删除所有行";
-            this.删除所有行ToolStripMenuItem.Click += new System.EventHandler(this.删除所有行ToolStripMenuItem_Click);
+            this.设置当前工位ToolStripMenuItem.Name = "设置当前工位ToolStripMenuItem";
+            this.设置当前工位ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.设置当前工位ToolStripMenuItem.Text = "设置当前工位";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(0, 786);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(1365, 132);
+            this.listBox1.TabIndex = 10;
             // 
             // Form1
             // 
@@ -586,8 +595,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1365, 940);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip1);
@@ -602,14 +611,15 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.contextMenuStrip3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -644,13 +654,10 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ImageList treeview_imageList1;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 移除当前工位ToolStripMenuItem1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
@@ -667,9 +674,13 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
         private System.Windows.Forms.ToolStripMenuItem 删除选中的当前行ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 删除所有行ToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem 设置当前工位ToolStripMenuItem;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
